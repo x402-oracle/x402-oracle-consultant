@@ -78,7 +78,7 @@ Prices must be re-verified against the live oracle_pricing endpoint before each 
 
 ## 3.3 Safety & Constraints
 
-- external_urls must declare https://x402orcle.vercel.app and the /api/consult path.
+- external_urls must list the origin https://x402orcle.vercel.app, https://x402orcle.vercel.app/api/health, https://x402orcle.vercel.app/api/pricing, and the five tier URLs https://x402orcle.vercel.app/api/consult/oracle_ask, https://x402orcle.vercel.app/api/consult/oracle_diagnose_402, https://x402orcle.vercel.app/api/consult/oracle_bazaar_rewrite, https://x402orcle.vercel.app/api/consult/oracle_review_mcp, and https://x402orcle.vercel.app/api/consult/complete_oracle_task. A consult call is `POST https://x402orcle.vercel.app/api/consult/<tier>` with body exactly `{"question":"<user question>"}`. Tiers and prices: oracle_ask \$0.10, oracle_diagnose_402 \$0.50, oracle_bazaar_rewrite \$1.50, oracle_review_mcp \$3.00, complete_oracle_task \$10.00. The receive address stays in SOW §11.
 
 - No private keys, seeds, or wallet secrets may be requested or stored.
 
