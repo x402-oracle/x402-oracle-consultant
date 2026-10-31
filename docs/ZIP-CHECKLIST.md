@@ -38,8 +38,8 @@ Print in black on white. Status words are the record. Do not treat an empty box 
 
 | Status | Count |
 |--------|------:|
-| PASS | 13 |
-| FAIL | 1 |
+| PASS | 14 |
+| FAIL | 0 |
 | BLOCKED | 9 |
 
 Blocked split: **BLOCKED-ON-D3** 8 (rows 1–8), **BLOCKED-ON-D4** 1 (row 20). **BLOCKED-ON-M0** 0.
@@ -70,7 +70,7 @@ Scanned `SKILL.md` only, 2026-10-31. Rows 5–8 still cover the archive.
 
 ## Declaration, gate, host, listing
 
-- [x] **17. PASS** — `external_urls` is exactly these eight URLs. Bare `/api/consult` is not listed. `/mcp` is not listed. `https://api.cdp.coinbase.com/` is not listed.
+- [x] **17. PASS** — `external_urls` is exactly these eight URLs. A consult URL with no tier is not listed. `/mcp` is not listed. `https://api.cdp.coinbase.com/` is not listed.
 
   - `https://x402orcle.vercel.app`
   - `https://x402orcle.vercel.app/api/health`
@@ -93,9 +93,9 @@ Scanned `SKILL.md` only, 2026-10-31. Rows 5–8 still cover the archive.
 
 - [x] **22. PASS** — Free GET lock, 2026-10-31T05:03:03Z, both HTTP 200. Same result as 2026-10-31T04:48:10Z–04:48:11Z. Health: `ok=true`, `version=0.1.0`, `wallet_configured=false`, `pay_to_configured=true`, `demoMode=false`, `network=eip155:8453`, `slug=x402orcle`. Pricing: `network=eip155:8453`; free paths `/api/health` and `/api/pricing`; paid `oracle_ask` $0.10, `oracle_diagnose_402` $0.50, `oracle_bazaar_rewrite` $1.50, `oracle_review_mcp` $3.00, `complete_oracle_task` $10.00. No POST.
 
-## Do not copy
+## Source samples
 
-- [ ] **23. FAIL** — `docs/SOP-specific.md` Step 2 and `docs/PRD.md` §3.3 still show bare `https://x402orcle.vercel.app/api/consult`. D1 did not copy that sample. Those source files were not rewritten. SOW §11 still overrides them.
+- [x] **23. PASS** — `docs/SOP-specific.md:41-59` (Step 2) lists the origin, `/api/health`, `/api/pricing`, and the five tier URLs, and states `POST https://x402orcle.vercel.app/api/consult/<tier>` with body exactly `{"question":"<user question>"}`. `docs/PRD.md:81` (§3.3) states `external_urls` must list the origin, health, pricing, and those five tier URLs, with the same call shape. Tiers and prices: oracle_ask $0.10, oracle_diagnose_402 $0.50, oracle_bazaar_rewrite $1.50, oracle_review_mcp $3.00, complete_oracle_task $10.00. The receive address stays in SOW §11.
 
 ## Not a zip row (recorded, not scored)
 
