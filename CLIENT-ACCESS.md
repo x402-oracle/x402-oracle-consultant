@@ -1,40 +1,42 @@
-# Client access (operator only)
+# Access (org x402-oracle)
 
-Repo must stay **private** until you explicitly flip visibility. The SOW is a builder contract, not a public listing.
+Repo is **private** under the organization **x402-oracle**. Both owners work here.
 
-## Invite (read-only)
+Canonical URL: https://github.com/x402-oracle/x402-oracle-consultant
+Daily pulse: https://github.com/x402-oracle/x402-oracle-consultant/blob/main/STATUS.md
 
-Need the client's GitHub username.
+## Current partners
 
-```bash
-gh api -X PUT repos/DillonBowen/x402-oracle-consultant/collaborators/CLIENT_USERNAME \
-  -f permission=pull
-```
+| GitHub | Intended role |
+|--------|----------------|
+| DillonBowen | Org Owner |
+| kwizzlesurp10-ctrl | Org Owner (pending accept) + repo Admin invite |
 
-`pull` = read. Do not grant `push` or `admin`.
+Org default repository permission is `admin`: once someone accepts an org **member** invite they already have admin on every org repo.
 
-They get an email. After they accept:
+True Owner (billing, people, transfer) is set at:
+https://github.com/orgs/x402-oracle/people
+Role → Owner.
 
-- Front door: https://github.com/DillonBowen/x402-oracle-consultant
-- Daily pulse: https://github.com/DillonBowen/x402-oracle-consultant/blob/main/STATUS.md
-- Watch: GitHub → Watch → All activity (or Participating)
-
-## If they have no GitHub account
-
-Do not make the repo public to dodge that. They create a free account; you invite.
-
-GitHub Pages from a private personal repo is not in the free tier. Do not promise a public URL.
-
-## Flip to public later (portfolio)
+Token used by Hermes has `read:org` only. Promoting a member to Owner via API needs:
 
 ```bash
-gh repo edit DillonBowen/x402-oracle-consultant --visibility public --accept-visibility-change-consequences
+gh auth refresh -h github.com -s admin:org
+gh api --method PUT orgs/x402-oracle/memberships/USERNAME -f role=admin
 ```
 
-Strip any client names or emails from `progress/` first.
-
-## Revoke
+## Invite another person as repo Admin
 
 ```bash
-gh api -X DELETE repos/DillonBowen/x402-oracle-consultant/collaborators/CLIENT_USERNAME
+gh api --method PUT \
+  repos/x402-oracle/x402-oracle-consultant/collaborators/USERNAME \
+  --input - <<< '{"permission":"admin"}'
 ```
+
+## Flip to public later
+
+```bash
+gh repo edit x402-oracle/x402-oracle-consultant --visibility public --accept-visibility-change-consequences
+```
+
+Strip client emails from `progress/` first.

@@ -35,8 +35,10 @@ Supporting: [docs/PRD.md](docs/PRD.md) (family overview), [docs/Agensi-Skill-Bui
 
 Do not treat a quiet STATUS as a failed delivery. Treat it as “no paper moved.”
 
-## Client access
+## Access
 
-Repo is **private**. You need a GitHub account and a collaborator invite (read-only). Open STATUS.md each morning.
+Private org repo: https://github.com/x402-oracle/x402-oracle-consultant
 
-Operator invite steps: [CLIENT-ACCESS.md](CLIENT-ACCESS.md)
+Keith (kwizzlesurp10-ctrl) and Dillon are partners. Accept the GitHub org + repo invites, then Watch the repo. STATUS.md is the daily pulse.
+
+Operator notes: [CLIENT-ACCESS.md](CLIENT-ACCESS.md)
