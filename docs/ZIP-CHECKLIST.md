@@ -1,74 +1,76 @@
 # ZIP checklist — x402-oracle-consultant
 
 **SOW ID:** DTC-AGENSI-X402-ORACLE-001  
-**Paper-trail date:** 2026-10-30  
-**M0:** not passed. `owner_execute` empty. This file is not the word “execute”.  
-**Package under test:** none. `SKILL.md` absent. `x402-oracle-consultant.zip` absent.
+**Paper-trail date:** 2026-10-30, updated 2026-10-31  
+**M0:** passed 2026-10-31 00:00 America/Chicago. Owner said “execute” in chat.  
+**M2:** `SKILL.md` written at repo root. No `reference.md` (SOW: optional, not required for Done).  
+**Package under test:** `SKILL.md` only. `x402-oracle-consultant.zip` still absent.
 
 Print in black on white. Status words are the record. Do not treat an empty box as a pass.
 
 | Word | Meaning |
 |------|---------|
-| **PASS** | Checked this pass against a file or a free GET. |
+| **PASS** | Checked this pass against `SKILL.md` or a free GET. |
 | **FAIL** | Checked this pass. The rule is not met. |
-| **BLOCKED-ON-M0** | Cannot pass until the owner says “execute” and D1 exists. |
+| **BLOCKED-ON-D3** | Zip-only. `SKILL.md` existing at repo root does not pass it. |
+| **BLOCKED-ON-D4** | Listing packet not written. |
 
 **Assumptions**
 
-- Task date is 2026-10-30. Free GET clock is 2026-10-31T04:48:10Z through 2026-10-31T04:48:11Z (23:48 America/Chicago, still 2026-10-30).
-- Request body stays `{"question":"<user question>"}` per SOW §4.1. Not re-probed. No POST. No `/openapi.json` fetch.
+- M1 re-check clock: 2026-10-31T05:03:03Z. Both free GETs HTTP 200. Paths, prices, network, and health flags still match SOW §11. Prior check 2026-10-31T04:48:10Z–04:48:11Z agreed.
+- Request body in D1 is `{"question":"<user question>"}`. Not re-probed with POST. No `/openapi.json` fetch.
 - SOW wins over PRD/SOP. §11 wins on paths and prices.
-- Listing price $15 is paid to Dilly's Trading Co. via Agensi. Oracle USDC is separate and is paid to the oracle, not to Dilly's Trading Co.
-- Public `payTo` stays in SOW §11. It is not copied below.
+- Listing price $15 is listing metadata (D4). Oracle USDC is separate and is paid to the oracle.
+- Public `payTo` stays in SOW §11. D1 tells the agent to read it from live `/api/pricing`. It is not copied below.
 
 ## D1–D6 gap
 
 | ID | Deliverable | State | Evidence |
 |----|-------------|--------|----------|
-| D1 | `SKILL.md` | **Blocked** | Missing. M0 not passed. |
-| D2 | Security pre-flight log | **Missing** | Eight scan rows below are not Pass. This sheet is the blank. |
+| D1 | `SKILL.md` | **Present** | Repo root. Frontmatter parsed. Phases numbered. Hard constraints before phases. Dry-run is the last section. Not zipped. |
+| D2 | Security pre-flight log | **Partial** | File-level points on this sheet are Pass. Archive size, file count, and `unzip -l` stay open. Not accepted as D2 Done. |
 | D3 | `x402-oracle-consultant.zip` | **Missing** | No zip in the repo. |
-| D4 | Listing packet | **Missing** | No paste-ready packet. Price and tags are specified, not written up. |
-| D5 | Dry-run record | **Missing** | No consult probe. No 402 transcript. No payment header. |
+| D4 | Listing packet | **Missing** | No paste-ready packet. |
+| D5 | Dry-run record | **Missing** | The skill contains a written example. No live consult probe. No 402 transcript from the host. No payment header. |
 | D6 | Submit confirmation | **Missing** | Not uploaded. Creator Mode not verified in this repo. |
-
-Also on disk, not D1–D6: `docs/SOW.md`, `docs/PRD-specific.md`, `docs/SOP-specific.md`, client window (`README.md`, `CLIENT-ACCESS.md`), daily STATUS (`STATUS.md`, `scripts/daily-status.sh`, `.github/workflows/daily-status.yml`). Live paths are locked in SOW §11 and matched by the free GETs recorded below.
 
 ## Counts (this sheet)
 
 | Status | Count |
 |--------|------:|
-| PASS | 2 |
+| PASS | 13 |
 | FAIL | 1 |
-| BLOCKED-ON-M0 | 20 |
+| BLOCKED | 9 |
+
+Blocked split: **BLOCKED-ON-D3** 8 (rows 1–8), **BLOCKED-ON-D4** 1 (row 20). **BLOCKED-ON-M0** 0.
 
 ## Package (zip not built)
 
-- [ ] **1. BLOCKED-ON-M0** — `SKILL.md` at zip root. No wrapping folder. File does not exist.
-- [ ] **2. BLOCKED-ON-M0** — Optional `reference.md` only. Not required for Done. No other payload files. Nothing to zip.
-- [ ] **3. BLOCKED-ON-M0** — No `node_modules`, binaries, `.env`, secrets, wallets, or private keys inside the zip. Zip does not exist, so this cannot pass. Repo observation only: no `node_modules`, no `.env` (existence check; file not opened), no zip. That observation is not a package pass.
-- [ ] **4. BLOCKED-ON-M0** — Zip name is `x402-oracle-consultant.zip`.
-- [ ] **5. BLOCKED-ON-M0** — Size ≤ 50 MB. (SOW §12 agent-upload cap is tighter: 5 MB and 100 files. Apply that cap too when the zip exists. It does not create a pass today.)
-- [ ] **6. BLOCKED-ON-M0** — ≤ 1,000 files.
-- [ ] **7. BLOCKED-ON-M0** — Text-only.
-- [ ] **8. BLOCKED-ON-M0** — `unzip -l` smoke test shows `SKILL.md` at the archive root.
+- [ ] **1. BLOCKED-ON-D3** — `SKILL.md` at zip root, no wrapping folder. The file is at the repo root. No archive exists, so `unzip -l` was not run.
+- [ ] **2. BLOCKED-ON-D3** — Optional `reference.md` only. `reference.md` was not added. Header names and the unpaid example are in `SKILL.md`. The zip’s file list is still unproven.
+- [ ] **3. BLOCKED-ON-D3** — No `node_modules`, binaries, `.env`, secrets, wallets, or private keys inside the zip. Zip does not exist. `SKILL.md` itself has none of those. That is not a package pass.
+- [ ] **4. BLOCKED-ON-D3** — Zip name is `x402-oracle-consultant.zip`.
+- [ ] **5. BLOCKED-ON-D3** — Size ≤ 50 MB. `SKILL.md` is 11294 bytes. The archive cap, including the tighter agent-upload cap (5 MB, 100 files), is not measured.
+- [ ] **6. BLOCKED-ON-D3** — ≤ 1,000 files in the zip.
+- [ ] **7. BLOCKED-ON-D3** — Text-only zip. `SKILL.md` is markdown. The archive was not built.
+- [ ] **8. BLOCKED-ON-D3** — `unzip -l` smoke test shows `SKILL.md` at the archive root.
 
 ## Agensi 8-point scan
 
-No `SKILL.md` to scan. Do not mark these Pass by reading the SOW.
+Scanned `SKILL.md` only, 2026-10-31. Rows 5–8 still cover the archive.
 
-- [ ] **9. BLOCKED-ON-M0** — Structure. Valid YAML frontmatter, size, file count, no bundled deps.
-- [ ] **10. BLOCKED-ON-M0** — File types. Markdown, text, or simple scripts only.
-- [ ] **11. BLOCKED-ON-M0** — No destructive commands, privilege escalation, remote piping, or `os.system`.
-- [ ] **12. BLOCKED-ON-M0** — No hardcoded secrets.
-- [ ] **13. BLOCKED-ON-M0** — No sensitive env harvesting.
-- [ ] **14. BLOCKED-ON-M0** — Every outbound host and path the instructions name is listed in `external_urls`.
-- [ ] **15. BLOCKED-ON-M0** — No eval chains or obfuscation.
-- [ ] **16. BLOCKED-ON-M0** — No “ignore previous instructions” and no other agent-manipulation phrase.
+- [x] **9. PASS** — Structure. YAML frontmatter parses. Keys: `name` (`x402-oracle-consultant`), `description`, `external_urls` (8). No bundled deps. Zip size and file count remain rows 5–6.
+- [x] **10. PASS** — File types. D1 is one markdown file. No `reference.md`. No binary added.
+- [x] **11. PASS** — No destructive commands, privilege escalation, remote piping, or `os.system` in `SKILL.md`.
+- [x] **12. PASS** — No hardcoded secrets in `SKILL.md`. No receive address. No key material.
+- [x] **13. PASS** — No environment harvesting in `SKILL.md`. The file forbids reading the process environment. It does not read one.
+- [x] **14. PASS** — Every outbound host and path named as a call is in `external_urls`. No second host.
+- [x] **15. PASS** — No eval chain or obfuscation in `SKILL.md`.
+- [x] **16. PASS** — The agent-manipulation phrase this row forbids is absent from `SKILL.md`.
 
 ## Declaration, gate, host, listing
 
-- [ ] **17. BLOCKED-ON-M0** — `external_urls` minimum is these eight URLs and no bare consult collection:
+- [x] **17. PASS** — `external_urls` is exactly these eight URLs. Bare `/api/consult` is not listed. `/mcp` is not listed. `https://api.cdp.coinbase.com/` is not listed.
 
   - `https://x402orcle.vercel.app`
   - `https://x402orcle.vercel.app/api/health`
@@ -79,25 +81,23 @@ No `SKILL.md` to scan. Do not mark these Pass by reading the SOW.
   - `https://x402orcle.vercel.app/api/consult/oracle_review_mcp`
   - `https://x402orcle.vercel.app/api/consult/complete_oracle_task`
 
-  Do not declare `GET /api/consult` (SOW §11: 404). Do not declare `/mcp`. Do not declare any host other than `x402orcle.vercel.app`. The pricing JSON `connect` string names `https://api.cdp.coinbase.com/` (facilitator) and env setup. Do not copy that string into D1. Do not add that host to `external_urls`.
+- [x] **18. PASS** — Human approval gate is Phase 4, after the unpaid 402 and before Phase 5. The ask states live USD, tier, path, and Base USDC / `eip155:8453`, and waits for an explicit yes in the current conversation. Any other reply stops the paid call. The skill forbids creating a `PAYMENT-SIGNATURE`. This session did not construct that header.
 
-- [ ] **18. BLOCKED-ON-M0** — Human-approval gate is present and cannot be skipped. Required shape when D1 is written: explicit yes in the current conversation, with exact USD, tier name, path, and network Base USDC / `eip155:8453`, before any `PAYMENT-SIGNATURE`. This pass did not construct that header.
+- [x] **19. PASS** — Host spelling in `SKILL.md` and in `external_urls` is `x402orcle` (one “a”).
 
-- [ ] **19. BLOCKED-ON-M0** — Skill package spells the host `x402orcle` (one “a”). Governing docs already use that spelling. The package does not exist, so the row stays blocked.
-
-- [ ] **20. BLOCKED-ON-M0** — Listing packet: **$15** one-time, plus tags `x402`, `oracle`, `mcp`, `agent-payments`, `base`, `usdc`. SOW §12 also lists `a2a` and `bazaar` (still ≤ 10 tags). Packet not written. Oracle spend ($0.10 / $0.50 / $1.50 / $3.00 / $10.00) is not the listing price.
+- [ ] **20. BLOCKED-ON-D4** — Listing packet: **$15** one-time, plus tags `x402`, `oracle`, `mcp`, `agent-payments`, `base`, `usdc`. SOW §12 also lists `a2a` and `bazaar`. Packet not written. `SKILL.md` says the marketplace price is not an oracle charge and does not quote $15 as a consult price.
 
 ## Checked this pass
 
-- [x] **21. PASS** — Public payTo already documented in SOW §11 — do not relocate. Live `GET /api/pricing` `payTo` matched that value (42-character receive address, compared, not written here).
+- [x] **21. PASS** — Public payTo already documented in SOW §11 — do not relocate. `SKILL.md` points at live `payTo` and does not embed it. `GET /api/pricing` at 2026-10-31T05:03:03Z still matched §11 (42-character receive address, compared, not written here).
 
-- [x] **22. PASS** — Free GET lock, 2026-10-31T04:48:10Z–2026-10-31T04:48:11Z, both HTTP 200. `GET /api/health`: `ok=true`, `version=0.1.0`, `wallet_configured=false`, `pay_to_configured=true`, `demoMode=false`, `network=eip155:8453`, `slug=x402orcle`. `GET /api/pricing`: `network=eip155:8453`; free `oracle_health` → `/api/health`, `oracle_pricing` → `/api/pricing`; paid `oracle_ask` $0.10, `oracle_diagnose_402` $0.50, `oracle_bazaar_rewrite` $1.50, `oracle_review_mcp` $3.00, `complete_oracle_task` $10.00, each `POST /api/consult/<tier>`. Array order on the wire differs from the §11 table order. Paths and prices match. No POST.
+- [x] **22. PASS** — Free GET lock, 2026-10-31T05:03:03Z, both HTTP 200. Same result as 2026-10-31T04:48:10Z–04:48:11Z. Health: `ok=true`, `version=0.1.0`, `wallet_configured=false`, `pay_to_configured=true`, `demoMode=false`, `network=eip155:8453`, `slug=x402orcle`. Pricing: `network=eip155:8453`; free paths `/api/health` and `/api/pricing`; paid `oracle_ask` $0.10, `oracle_diagnose_402` $0.50, `oracle_bazaar_rewrite` $1.50, `oracle_review_mcp` $3.00, `complete_oracle_task` $10.00. No POST.
 
 ## Do not copy
 
-- [ ] **23. FAIL** — `docs/SOP-specific.md` Step 2 sample `external_urls` is origin plus bare `https://x402orcle.vercel.app/api/consult`. It omits `/api/health`, `/api/pricing`, and the five tier paths. `docs/PRD.md` §3.3 says the same bare consult path. SOW §3 and §11 already override both. Do not copy those samples into D1. SOW was not rewritten.
+- [ ] **23. FAIL** — `docs/SOP-specific.md` Step 2 and `docs/PRD.md` §3.3 still show bare `https://x402orcle.vercel.app/api/consult`. D1 did not copy that sample. Those source files were not rewritten. SOW §11 still overrides them.
 
 ## Not a zip row (recorded, not scored)
 
-- `README.md` says `daily-status` also runs on each push. `.github/workflows/daily-status.yml` does not (`cron` 07:00 America/Chicago and `workflow_dispatch` only; comment says not on push, because a STATUS timestamp would loop). No edit this pass.
+- `README.md` says `daily-status` also runs on each push. `.github/workflows/daily-status.yml` does not (`cron` 07:00 America/Chicago and `workflow_dispatch` only). No edit this pass.
 - No `docs/SOW-ERRATA.md`. Live health and pricing match §11.
