@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*~
+.env
+.env.*
+secrets/
+*.zip
+__pycache__/

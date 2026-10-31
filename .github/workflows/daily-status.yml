@@ -1,0 +1,36 @@
+name: daily-status
+
+on:
+  schedule:
+    # 07:00 America/Chicago (CDT = UTC-5 → 12:00 UTC)
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+  # Not on push: STATUS.md always gets a new timestamp and would loop.
+
+permissions:
+  contents: write
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: Rewrite STATUS.md
+        env:
+          TZ: America/Chicago
+        run: bash scripts/daily-status.sh
+
+      - name: Commit if STATUS.md changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md
+          if git diff --cached --quiet; then
+            echo "STATUS.md unchanged"
+            exit 0
+          fi
+          git commit -m "chore(status): daily client pulse"
+          git push
