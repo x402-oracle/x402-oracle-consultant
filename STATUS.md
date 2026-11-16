@@ -1,5 +1,13 @@
 # Status
 
+Generated: 2026-10-31T02:28:06-05:00 (America/Chicago)
+
+## Last 24 hours
+
+- `d836cc2` 2026-10-31 — docs: replace bare consult samples with tiered paths
+- `821ea0d` 2026-10-31 — feat: add SKILL.md (M2)
+- `7314c27` 2026-10-31 — docs: add zip checklist and paper-trail journal
+- `598a56e` 2026-10-30 — Initial client window for x402 Oracle Consultant
 Generated: 2026-11-15T12:43:57-06:00 (America/Chicago)
 
 ## Last 24 hours
@@ -13,6 +21,7 @@ Last activity: 2026-11-14 `ab20c73` chore(status): daily client pulse
 - [SOW](docs/SOW.md)
 - [PRD (skill-specific)](docs/PRD-specific.md)
 - [SOP (skill-specific)](docs/SOP-specific.md)
+- [Journal 2026-10-31](progress/2026-10-31.md) (file may not exist yet)
 - [Journal 2026-11-15](progress/2026-11-15.md) (file may not exist yet)
 
 ## Rule
