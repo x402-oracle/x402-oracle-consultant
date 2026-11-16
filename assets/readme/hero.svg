@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">x402 Oracle Consultant</title>
+  <desc id="desc">Agensi skill paper trail. Teaches an agent to consult the live x402 Oracle. Free discovery first, HTTP 402 next, human approval before any payment. Never a wallet.</desc>
+
+  <rect width="1200" height="380" rx="18" fill="#0b0c0e"/>
+  <rect x="1" y="1" width="1198" height="378" rx="17" fill="none" stroke="#2a2e33" stroke-width="1"/>
+
+  <!-- 402 motif bar -->
+  <rect x="0" y="0" width="8" height="380" fill="#e6a317"/>
+
+  <g id="title-block" transform="translate(48 44)">
+    <text x="0" y="22" fill="#8a9086" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">AGENSI SKILL · SOW DTC-AGENSI-X402-ORACLE-001</text>
+    <text x="0" y="92" fill="#e7e2d6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="52" font-weight="700">Oracle Consultant</text>
+    <text x="0" y="138" fill="#e7e2d6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24">Teach an agent the live oracle. Never the wallet.</text>
+    <text x="0" y="178" fill="#8a9086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20">Free discovery → HTTP 402 → explicit yes → wisdom envelope.</text>
+
+    <g transform="translate(0 214)">
+      <rect width="86" height="36" rx="6" fill="#e6a317"/>
+      <text x="43" y="25" text-anchor="middle" fill="#0b0c0e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">402</text>
+      <rect x="98" y="0" width="210" height="36" rx="6" fill="#14171c" stroke="#2a2e33"/>
+      <text x="203" y="25" text-anchor="middle" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">PAYMENT-REQUIRED</text>
+      <rect x="320" y="0" width="196" height="36" rx="6" fill="#14171c" stroke="#2a2e33"/>
+      <text x="418" y="25" text-anchor="middle" fill="#4c8dff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">eip155:8453</text>
+    </g>
+  </g>
+
+  <g id="project-proof" transform="translate(700 36)">
+    <rect width="456" height="308" rx="12" fill="#14171c" stroke="#2a2e33"/>
+    <rect width="456" height="40" rx="12" fill="#101216"/>
+    <rect y="28" width="456" height="12" fill="#101216"/>
+    <circle cx="22" cy="20" r="5" fill="#c44536"/>
+    <circle cx="40" cy="20" r="5" fill="#e6a317"/>
+    <circle cx="58" cy="20" r="5" fill="#3d8a5a"/>
+    <text x="86" y="25" fill="#8a9086" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">x402orcle.vercel.app</text>
+
+    <text x="24" y="72" fill="#8a9086" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">GET  /api/health                 $0</text>
+    <text x="24" y="102" fill="#8a9086" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">GET  /api/pricing                $0</text>
+    <text x="24" y="140" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">POST /api/consult/oracle_ask  $0.10</text>
+    <text x="24" y="170" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">POST .../oracle_diagnose_402  $0.50</text>
+    <text x="24" y="200" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">POST .../oracle_bazaar_rewrite $1.50</text>
+    <text x="24" y="230" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">POST .../oracle_review_mcp    $3.00</text>
+    <text x="24" y="260" fill="#e7e2d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">POST .../complete_oracle_task $10.00</text>
+    <text x="24" y="292" fill="#e6a317" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">no private keys · human yes only</text>
+  </g>
+</svg>
